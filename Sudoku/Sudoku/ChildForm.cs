@@ -24,7 +24,17 @@ namespace Sudoku
 
         private void ChildForm_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
+        }
+
+        private void NewGameBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -20,9 +20,9 @@ namespace Sudoku
             formB.MdiParent = this;
             formB.Show();
 
-            ChildForm formC = new ChildForm();
-            formC.MdiParent = this;
-            formC.Show();
+            //ChildForm formC = new ChildForm();
+            //formC.MdiParent = this;
+            //formC.Show();
         }
     }
 }
