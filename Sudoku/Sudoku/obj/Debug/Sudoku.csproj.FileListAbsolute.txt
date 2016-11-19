@@ -15,6 +15,7 @@ C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\bin\Debug\Sudoku.exe
 C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\bin\Debug\Sudoku.pdb
 C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.csprojResolveAssemblyReference.cache
 C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.MainWindowForm.resources
-C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.ChildForm.resources
 C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.Properties.Resources.resources
 C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.csproj.GenerateResource.Cache
+C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.MainMenuForm.resources
+C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.LevelDifficultyForm.resources

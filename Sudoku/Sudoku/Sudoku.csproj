@@ -44,25 +44,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LevelDifficultyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LevelDifficultyForm.Designer.cs">
+      <DependentUpon>LevelDifficultyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindowForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainWindowForm.Designer.cs">
       <DependentUpon>MainWindowForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChildForm.cs">
+    <Compile Include="MainMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChildForm.Designer.cs">
-      <DependentUpon>ChildForm.cs</DependentUpon>
+    <Compile Include="MainMenuForm.Designer.cs">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="LevelDifficultyForm.resx">
+      <DependentUpon>LevelDifficultyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindowForm.resx">
       <DependentUpon>MainWindowForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChildForm.resx">
-      <DependentUpon>ChildForm.cs</DependentUpon>
+    <EmbeddedResource Include="MainMenuForm.resx">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

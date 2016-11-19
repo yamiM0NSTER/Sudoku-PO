@@ -12,17 +12,27 @@ namespace Sudoku
 {
     public partial class MainWindowForm : Form
     {
+        private MainMenuForm mainmenuform;
+        private LevelDifficultyForm leveldifficultyform;
+
         public MainWindowForm()
         {
             InitializeComponent();
 
-            ChildForm formB = new ChildForm();
+            MainMenuForm formB = new MainMenuForm();
             formB.MdiParent = this;
             formB.Show();
 
             //ChildForm formC = new ChildForm();
             //formC.MdiParent = this;
             //formC.Show();
+        }
+
+        public void LevelDifficulty()
+        {
+            LevelDifficultyForm formB = new LevelDifficultyForm();
+            formB.MdiParent = this;
+            formB.Show();
         }
     }
 }

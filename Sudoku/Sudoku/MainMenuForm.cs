@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sudoku
 {
-    public partial class ChildForm : Form
+    public partial class MainMenuForm : Form
     {
-        public ChildForm()
+        public MainMenuForm()
         {
             InitializeComponent();
         }
@@ -29,7 +29,9 @@ namespace Sudoku
 
         private void NewGameBtn_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            MainWindowForm form = MdiParent as MainWindowForm;
+            form.LevelDifficulty();
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)

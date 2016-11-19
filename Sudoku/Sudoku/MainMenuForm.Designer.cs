@@ -1,6 +1,6 @@
 ﻿namespace Sudoku
 {
-    partial class ChildForm
+    partial class MainMenuForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,6 +35,7 @@
             // NewGameBtn
             // 
             this.NewGameBtn.BackColor = System.Drawing.Color.Transparent;
+            this.NewGameBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewGameBtn.Location = new System.Drawing.Point(190, 175);
             this.NewGameBtn.Name = "NewGameBtn";
             this.NewGameBtn.Size = new System.Drawing.Size(300, 80);
@@ -46,6 +47,7 @@
             // ExitBtn
             // 
             this.ExitBtn.BackColor = System.Drawing.Color.Transparent;
+            this.ExitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExitBtn.Location = new System.Drawing.Point(190, 323);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(300, 80);
@@ -54,7 +56,7 @@
             this.ExitBtn.UseVisualStyleBackColor = false;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
-            // ChildForm
+            // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -66,7 +68,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ChildForm";
+            this.Name = "MainMenuForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
