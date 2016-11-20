@@ -36,5 +36,11 @@ namespace Sudoku
         {
             Application.Exit();
         }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            MainWindowForm form = MdiParent as MainWindowForm;
+            form.MainMenu();
+        }
     }
 }

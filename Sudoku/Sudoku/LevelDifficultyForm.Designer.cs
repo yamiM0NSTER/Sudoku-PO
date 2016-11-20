@@ -77,6 +77,7 @@
             this.BackBtn.TabIndex = 3;
             this.BackBtn.Text = "◀";
             this.BackBtn.UseVisualStyleBackColor = true;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // LevelDifficultyForm
             // 
@@ -95,9 +96,8 @@
             this.Name = "LevelDifficultyForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
             this.Load += new System.EventHandler(this.ChildForm_Load);
             this.Click += new System.EventHandler(this.ChildForm_Click);
             this.ResumeLayout(false);

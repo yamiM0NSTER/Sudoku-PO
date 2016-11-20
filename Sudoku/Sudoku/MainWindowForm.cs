@@ -19,20 +19,24 @@ namespace Sudoku
         {
             InitializeComponent();
 
-            MainMenuForm formB = new MainMenuForm();
-            formB.MdiParent = this;
-            formB.Show();
+            mainmenuform = new MainMenuForm();
+            mainmenuform.MdiParent = this;
+            leveldifficultyform = new LevelDifficultyForm();
+            leveldifficultyform.MdiParent = this;
 
-            //ChildForm formC = new ChildForm();
-            //formC.MdiParent = this;
-            //formC.Show();
+            MainMenu();
         }
 
         public void LevelDifficulty()
         {
-            LevelDifficultyForm formB = new LevelDifficultyForm();
-            formB.MdiParent = this;
-            formB.Show();
+            leveldifficultyform.Show();
+            mainmenuform.Hide();
+        }
+
+        public void MainMenu()
+        {
+            mainmenuform.Show();
+            leveldifficultyform.Hide();
         }
     }
 }

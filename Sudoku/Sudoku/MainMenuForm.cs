@@ -29,7 +29,6 @@ namespace Sudoku
 
         private void NewGameBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
             MainWindowForm form = MdiParent as MainWindowForm;
             form.LevelDifficulty();
         }
