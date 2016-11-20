@@ -12,6 +12,7 @@ namespace Sudoku
 {
     public partial class LevelDifficultyForm : Form
     {
+        private MainWindowForm MainForm;
         public LevelDifficultyForm()
         {
             InitializeComponent();
@@ -20,13 +21,11 @@ namespace Sudoku
         private void ChildForm_Load(object sender, EventArgs e)
         {
 
-            MainWindowForm form = MdiParent as MainWindowForm;
+            MainForm = MdiParent as MainWindowForm;
 
             int y = 175;
-            foreach (LevelInfo lvlInfo in form.loader._lstLevelInfos)
+            foreach (LevelInfo lvlInfo in MainForm.loader._lstLevelInfos)
             {
-                
-
                 Button btn = new Button();
                 btn.Text = lvlInfo.name;
                 btn.Size = new Size(300,80);
@@ -40,7 +39,6 @@ namespace Sudoku
                 btn.TabIndex = 0;
                 btn.UseVisualStyleBackColor = false;
                 btn.Name = lvlInfo.LevelNumber.ToString();
-                MessageBox.Show(btn.Name);
                 btn.Click += new System.EventHandler(this.NewGameBtn_Click);
 
                 btn.Show();
@@ -56,7 +54,8 @@ namespace Sudoku
 
         private void NewGameBtn_Click(object sender, EventArgs e)
         {
-
+            Button btn = sender as Button;
+            MainForm.LevelSelect(int.Parse(btn.Name));
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -66,8 +65,7 @@ namespace Sudoku
 
         private void BackBtn_Click(object sender, EventArgs e)
         {
-            MainWindowForm form = MdiParent as MainWindowForm;
-            form.MainMenu();
+            MainForm.MainMenu();
         }
     }
 }

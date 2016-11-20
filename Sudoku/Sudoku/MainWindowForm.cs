@@ -45,7 +45,7 @@ namespace Sudoku
 
         public void LevelSelect(int nDifficulty)
         {
-            
+            MessageBox.Show(nDifficulty.ToString());
         }
     }
 }
