@@ -14,7 +14,7 @@ namespace Sudoku
     {
         private MainMenuForm mainmenuform;
         private LevelDifficultyForm leveldifficultyform;
-        private LevelLoader loader;
+        public LevelLoader loader;
 
         public MainWindowForm()
         {
@@ -41,6 +41,11 @@ namespace Sudoku
         {
             mainmenuform.Show();
             leveldifficultyform.Hide();
+        }
+
+        public void LevelSelect(int nDifficulty)
+        {
+            
         }
     }
 }

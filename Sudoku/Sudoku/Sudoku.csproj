@@ -44,12 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Level.cs" />
     <Compile Include="LevelDifficultyForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LevelDifficultyForm.Designer.cs">
       <DependentUpon>LevelDifficultyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LevelInfo.cs" />
     <Compile Include="LevelLoader.cs" />
     <Compile Include="MainWindowForm.cs">
       <SubType>Form</SubType>

@@ -8,9 +8,12 @@ namespace Sudoku
 {
     class Level
     {
+        public int[][] board;
         public Level()
         {
-            
+            board = new int[9][];
+            for( int i = 0; i < 9;i++)
+                board[i] = new int[9];
         }
     }
 }

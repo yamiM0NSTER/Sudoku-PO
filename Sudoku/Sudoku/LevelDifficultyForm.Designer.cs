@@ -28,35 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.NewGameBtn = new System.Windows.Forms.Button();
-            this.ExitBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.BackBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // NewGameBtn
-            // 
-            this.NewGameBtn.BackColor = System.Drawing.Color.Transparent;
-            this.NewGameBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewGameBtn.Location = new System.Drawing.Point(190, 204);
-            this.NewGameBtn.Name = "NewGameBtn";
-            this.NewGameBtn.Size = new System.Drawing.Size(300, 80);
-            this.NewGameBtn.TabIndex = 0;
-            this.NewGameBtn.Text = "NEW GAME";
-            this.NewGameBtn.UseVisualStyleBackColor = false;
-            this.NewGameBtn.Click += new System.EventHandler(this.NewGameBtn_Click);
-            // 
-            // ExitBtn
-            // 
-            this.ExitBtn.BackColor = System.Drawing.Color.Transparent;
-            this.ExitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitBtn.Location = new System.Drawing.Point(190, 323);
-            this.ExitBtn.Name = "ExitBtn";
-            this.ExitBtn.Size = new System.Drawing.Size(300, 80);
-            this.ExitBtn.TabIndex = 1;
-            this.ExitBtn.Text = "EXIT";
-            this.ExitBtn.UseVisualStyleBackColor = false;
-            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // label1
             // 
@@ -88,8 +62,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ExitBtn);
-            this.Controls.Add(this.NewGameBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -107,8 +79,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button NewGameBtn;
-        private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BackBtn;
     }
