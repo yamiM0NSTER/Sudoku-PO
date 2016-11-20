@@ -14,10 +14,14 @@ namespace Sudoku
     {
         private MainMenuForm mainmenuform;
         private LevelDifficultyForm leveldifficultyform;
+        private LevelLoader loader;
 
         public MainWindowForm()
         {
             InitializeComponent();
+
+            loader = new LevelLoader();
+            loader.LoadLevelInfo();
 
             mainmenuform = new MainMenuForm();
             mainmenuform.MdiParent = this;
