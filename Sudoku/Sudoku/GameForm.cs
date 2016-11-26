@@ -57,8 +57,6 @@ namespace Sudoku
                     if(buttons[i][j] != null)
                         buttons[i][j].Dispose();
                     SudokuBtn btn = new SudokuBtn();
-                    if(lvl.board[i][j] != 0)
-                        btn.Text = lvl.board[i][j].ToString();
                     btn.Parent = this;
                     btn.BackColor = System.Drawing.Color.Transparent;
                     btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -66,9 +64,6 @@ namespace Sudoku
                     btn.Size = new System.Drawing.Size(35, 35);
                     btn.TabIndex = 0;
                     btn.UseVisualStyleBackColor = false;
-                    btn.Name = (i + 1).ToString();
-                    btn.Click += new System.EventHandler(this.StartGameBtn_Click);
-                    //btn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Sudoku_UpdateValue);
                     btn.SetValue(lvl.board[i][j], true);
 
                     btn.Show();
@@ -83,12 +78,6 @@ namespace Sudoku
                     y += 5;
                 y += 37;
             }
-        }
-
-        private void StartGameBtn_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            //_mainForm.StartGame(nDifficulty, int.Parse(btn.Name));
         }
 
         internal bool CheckFinished()
