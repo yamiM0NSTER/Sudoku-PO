@@ -44,11 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GameForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GameForm.Designer.cs">
       <DependentUpon>GameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plexiglass.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="SelectLevelForm.cs">
       <SubType>Form</SubType>

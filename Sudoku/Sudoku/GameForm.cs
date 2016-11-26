@@ -17,7 +17,8 @@ namespace Sudoku
         private int nDifficulty;
         private SudokuBtn[][] buttons;
         private Stopwatch time;
-        
+        private DialogForm dialog;
+
         public GameForm()
         {
             InitializeComponent();
@@ -180,6 +181,37 @@ namespace Sudoku
         private void timer1_Tick(object sender, EventArgs e)
         {
             label1.Text = GetTime();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Plexiglass overlay = new Plexiglass(this);
+            dialog = new DialogForm(this);
+
+            this.LocationChanged += Cover_LocationChanged;
+
+            /*Panel pane = new Panel();
+            pane.Parent = overlay;
+            pane.BackColor = System.Drawing.Color.Gainsboro;
+            pane.Location = new System.Drawing.Point(150, 300);
+
+            pane.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            pane.Size = new System.Drawing.Size(200, 400);
+            pane.TabIndex = 0;
+            pane.Show();*/
+        }
+
+        private void Cover_LocationChanged(object sender, EventArgs e)
+        {
+            // Ensure the plexiglass follows the owner
+            dialog.Location = this.PointToScreen(Point.Empty);
+        }
+        
+
+        private void GameForm_Move(object sender, EventArgs e)
+        {
+
         }
     }
 }
