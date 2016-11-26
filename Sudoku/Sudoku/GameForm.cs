@@ -116,12 +116,21 @@ namespace Sudoku
             return true;
         }
 
-        internal void CheckCorrect()
+        internal bool CheckCorrect()
         {
             // Horizontal Rows
+            for (int nRow = 0; nRow < 9; nRow++)
+            {
+                for (int nVal = 1; nVal <= 9; nVal++)
+                {
+                    if (CheckRowHorizontal(nRow, nVal) == false)
+                        return false;
+                }
+            }
 
 
 
+            return true;
             //throw new NotImplementedException();
         }
 
