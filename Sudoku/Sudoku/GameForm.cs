@@ -46,21 +46,6 @@ namespace Sudoku
 
         public void PrepareLevel(Level lvl)
         {
-            String str = "";
-            for (int i = 0; i < 9; i++)
-            {
-                for (int j = 0; j < 9; j++)
-                {
-                    str += lvl.board[i][j].ToString();
-                }
-                str += '\n';
-            }
-            MessageBox.Show(str);
-            // Remove all buttons for previous difficulty choice
-            //foreach (Button butt in buttons)
-            //    butt.Dispose();
-            //buttons.Clear();
-
             int y = 20;
             int x = 160;
 
@@ -68,6 +53,9 @@ namespace Sudoku
             {
                 for (int j = 0; j < 9; j++)
                 {
+                    // Remove all buttons for previous level choice
+                    if(buttons[i][j] != null)
+                        buttons[i][j].Dispose();
                     SudokuBtn btn = new SudokuBtn();
                     if(lvl.board[i][j] != 0)
                         btn.Text = lvl.board[i][j].ToString();

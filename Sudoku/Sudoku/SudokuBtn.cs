@@ -47,7 +47,14 @@ namespace Sudoku
                 if (parent.CheckFinished() == true)
                 {
                     MessageBox.Show("Full");
-                    parent.CheckCorrect();
+                    if (parent.CheckCorrect())
+                    {
+                        MessageBox.Show("Horizontal correct");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Some fields are wrong");
+                    }
                 }
             }
         }
