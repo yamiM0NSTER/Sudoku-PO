@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace Sudoku
         private MainWindowForm _mainForm;
         private int nDifficulty;
         private SudokuBtn[][] buttons;
+        private Stopwatch time;
         
         public GameForm()
         {
@@ -22,6 +24,7 @@ namespace Sudoku
             buttons = new SudokuBtn[9][];
             for (int i = 0; i < 9; i++)
                 buttons[i] = new SudokuBtn[9];
+            time = new Stopwatch();
         }
 
         public GameForm(MainWindowForm parent)
@@ -32,6 +35,7 @@ namespace Sudoku
             buttons = new SudokuBtn[9][];
             for (int i = 0; i < 9; i++)
                 buttons[i] = new SudokuBtn[9];
+            time = new Stopwatch();
         }
 
         private void ChildForm_Load(object sender, EventArgs e)
@@ -78,6 +82,9 @@ namespace Sudoku
                     y += 5;
                 y += 37;
             }
+            time.Reset();
+            time.Start();
+            timer1.Start();
         }
 
         internal bool CheckFinished()
@@ -163,6 +170,16 @@ namespace Sudoku
             }
 
             return false;
+        }
+
+        public string GetTime()
+        {
+            return time.Elapsed.Hours.ToString("00") + ":" + time.Elapsed.Minutes.ToString("00") + ":" + time.Elapsed.Seconds.ToString("00");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Text = GetTime();
         }
     }
 }

@@ -48,7 +48,7 @@ namespace Sudoku
                 {
                     if (parent.CheckCorrect())
                     {
-                        MessageBox.Show("Horizontal & Vertical correct");
+                        MessageBox.Show("Horizontal & Vertical correct\nYour time: " +parent.GetTime());
                     }
                     else
                     {

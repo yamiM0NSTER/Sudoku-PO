@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.BackBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BackBtn
@@ -42,6 +46,32 @@
             this.BackBtn.UseVisualStyleBackColor = true;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(550, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 24);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "00:00:00";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(550, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Time:";
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -49,6 +79,8 @@
             this.BackColor = System.Drawing.Color.Turquoise;
             this.ClientSize = new System.Drawing.Size(680, 557);
             this.ControlBox = false;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BackBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -60,11 +92,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.ChildForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button BackBtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label2;
     }
 }
