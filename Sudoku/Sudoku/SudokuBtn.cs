@@ -40,9 +40,19 @@ namespace Sudoku
                 Text = nVal.ToString();
             else
                 Text = "";
+
+            if (bBase == false)
+            {
+                GameForm parent = Parent as GameForm;
+                if (parent.CheckFinished() == true)
+                {
+                    MessageBox.Show("Full");
+                    parent.CheckCorrect();
+                }
+            }
         }
 
-        public int GetValue()
+        public int GetVal()
         {
             return nValue;
         }
