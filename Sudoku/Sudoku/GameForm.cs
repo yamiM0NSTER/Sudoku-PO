@@ -127,7 +127,7 @@ namespace Sudoku
             }
 
             // 3x3 Squares
-            /*for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
                 {
@@ -137,11 +137,9 @@ namespace Sudoku
                             return false;
                     }
                 }
-            }*/
-
+            }
 
             return true;
-            //throw new NotImplementedException();
         }
 
         private bool CheckRowHorizontal(int nRow, int nVal)
@@ -166,13 +164,15 @@ namespace Sudoku
 
         private bool CheckSquare(int nRow, int nColumn, int nVal)
         {
-            
-
-            for (int i = 0; i < 9; i++)
+            for (int i = nRow*3; i < nRow*3 + 3; i++)
             {
-                if (buttons[i][nRow].GetVal() == nVal)
-                    return true;
+                for (int j = nColumn*3; j < nColumn*3 + 3; j++)
+                {
+                    if (buttons[i][j].GetVal() == nVal)
+                        return true;
+                }
             }
+
             return false;
         }
     }
