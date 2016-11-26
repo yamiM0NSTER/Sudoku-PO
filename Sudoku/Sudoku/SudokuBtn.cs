@@ -46,7 +46,6 @@ namespace Sudoku
                 GameForm parent = Parent as GameForm;
                 if (parent.CheckFinished() == true)
                 {
-                    MessageBox.Show("Full");
                     if (parent.CheckCorrect())
                     {
                         MessageBox.Show("Horizontal correct");
