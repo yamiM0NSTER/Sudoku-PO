@@ -127,7 +127,17 @@ namespace Sudoku
             }
 
             // 3x3 Squares
-
+            /*for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    for (int nVal = 1; nVal <= 9; nVal++)
+                    {
+                        if (CheckSquare(i, j, nVal) == false)
+                            return false;
+                    }
+                }
+            }*/
 
 
             return true;
@@ -146,6 +156,18 @@ namespace Sudoku
 
         private bool CheckRowVertical(int nRow, int nVal)
         {
+            for (int i = 0; i < 9; i++)
+            {
+                if (buttons[i][nRow].GetVal() == nVal)
+                    return true;
+            }
+            return false;
+        }
+
+        private bool CheckSquare(int nRow, int nColumn, int nVal)
+        {
+            
+
             for (int i = 0; i < 9; i++)
             {
                 if (buttons[i][nRow].GetVal() == nVal)
