@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sudoku
 {
-    class Level
+    public class Level
     {
         public int[][] board;
         public Level()

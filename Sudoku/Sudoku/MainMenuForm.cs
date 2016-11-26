@@ -17,6 +17,12 @@ namespace Sudoku
             InitializeComponent();
         }
 
+        public MainMenuForm(MainWindowForm parent)
+        {
+            this.MdiParent = parent;
+            InitializeComponent();
+        }
+
         private void ChildForm_Load(object sender, EventArgs e)
         {
 
@@ -30,7 +36,7 @@ namespace Sudoku
         private void NewGameBtn_Click(object sender, EventArgs e)
         {
             MainWindowForm form = MdiParent as MainWindowForm;
-            form.LevelDifficulty();
+            form.LevelDifficultyMenu();
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace Sudoku
 {
-    partial class LevelDifficultyForm
+    partial class SelectLevelForm
     {
         /// <summary>
         /// Required designer variable.
@@ -36,11 +36,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(149, 30);
+            this.label1.Location = new System.Drawing.Point(163, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(383, 55);
+            this.label1.Size = new System.Drawing.Size(319, 55);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Choose Difficulty";
+            this.label1.Text = "Choose Level";
             // 
             // BackBtn
             // 
@@ -71,6 +71,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.ChildForm_Load);
+            this.Click += new System.EventHandler(this.ChildForm_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -11,7 +11,7 @@ namespace Sudoku
 {
     public class LevelInfo
     {
-        private List<Level> _lstLevels;
+        public List<Level> _lstLevels;
         public string name;
         public int LevelNumber;
 

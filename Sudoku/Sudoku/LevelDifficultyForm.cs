@@ -12,26 +12,30 @@ namespace Sudoku
 {
     public partial class LevelDifficultyForm : Form
     {
-        private MainWindowForm MainForm;
+        private MainWindowForm _mainForm;
         public LevelDifficultyForm()
         {
+            InitializeComponent();
+        }
+
+        public LevelDifficultyForm(MainWindowForm parent)
+        {
+            _mainForm = parent;
+            this.MdiParent = parent;
             InitializeComponent();
         }
 
         private void ChildForm_Load(object sender, EventArgs e)
         {
 
-            MainForm = MdiParent as MainWindowForm;
+            _mainForm = MdiParent as MainWindowForm;
 
             int y = 175;
-            foreach (LevelInfo lvlInfo in MainForm.loader._lstLevelInfos)
+            foreach (LevelInfo lvlInfo in _mainForm.loader._lstLevelInfos)
             {
                 Button btn = new Button();
                 btn.Text = lvlInfo.name;
-                btn.Size = new Size(300,80);
-                btn.Location = new Point(190, y);
                 btn.Parent = this;
-
                 btn.BackColor = System.Drawing.Color.Transparent;
                 btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 btn.Location = new System.Drawing.Point(190, y);
@@ -42,30 +46,21 @@ namespace Sudoku
                 btn.Click += new System.EventHandler(this.NewGameBtn_Click);
 
                 btn.Show();
-                y += 130;
+                y += 100;
             }
 
         }
 
-        private void ChildForm_Click(object sender, EventArgs e)
-        {
-            //this.Hide();
-        }
 
         private void NewGameBtn_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            MainForm.LevelSelect(int.Parse(btn.Name));
-        }
-
-        private void ExitBtn_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+            _mainForm.LevelSelect(int.Parse(btn.Name));
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
         {
-            MainForm.MainMenu();
+            _mainForm.MainMenu();
         }
     }
 }

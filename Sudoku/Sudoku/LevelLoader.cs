@@ -46,8 +46,6 @@ namespace Sudoku
                         Klappa += DirPath + "\\info.txt" + "\n";
                     }
 
-
-
                     string[] strFiles = Directory.GetFiles(DirPath+"\\");
                     foreach (string FilePath in strFiles)
                     {

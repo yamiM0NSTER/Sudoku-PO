@@ -19,3 +19,5 @@ C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.Properties
 C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.csproj.GenerateResource.Cache
 C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.MainMenuForm.resources
 C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.LevelDifficultyForm.resources
+C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.SelectLevelForm.resources
+C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.GameForm.resources

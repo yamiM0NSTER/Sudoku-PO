@@ -14,6 +14,8 @@ namespace Sudoku
     {
         private MainMenuForm mainmenuform;
         private LevelDifficultyForm leveldifficultyform;
+        private SelectLevelForm levelselectform;
+        private GameForm gameform;
         public LevelLoader loader;
 
         public MainWindowForm()
@@ -21,31 +23,70 @@ namespace Sudoku
             InitializeComponent();
 
             loader = new LevelLoader();
-            loader.LoadLevelInfo();
-
             mainmenuform = new MainMenuForm();
-            mainmenuform.MdiParent = this;
             leveldifficultyform = new LevelDifficultyForm();
-            leveldifficultyform.MdiParent = this;
+            levelselectform = new SelectLevelForm(this);
+            gameform = new GameForm(this);
 
+            mainmenuform.MdiParent = this;
+            leveldifficultyform.MdiParent = this;
+            levelselectform.MdiParent = this;
+            gameform.MdiParent = this;
+
+            loader.LoadLevelInfo();
             MainMenu();
         }
 
-        public void LevelDifficulty()
-        {
-            leveldifficultyform.Show();
-            mainmenuform.Hide();
-        }
-
+        
         public void MainMenu()
         {
             mainmenuform.Show();
+
             leveldifficultyform.Hide();
+            levelselectform.Hide();
+            gameform.Hide();
+        }
+
+        public void LevelDifficultyMenu()
+        {
+            leveldifficultyform.Show();
+
+            mainmenuform.Hide();
+            levelselectform.Hide();
+            gameform.Hide();
+        }
+
+        public void SelectLevelMenu()
+        {
+            levelselectform.Show();
+
+            leveldifficultyform.Hide();
+            mainmenuform.Hide();
+            gameform.Hide();
+        }
+
+        public void GameMenu()
+        {
+            gameform.Show();
+
+            levelselectform.Hide();
+            leveldifficultyform.Hide();
+            mainmenuform.Hide();
         }
 
         public void LevelSelect(int nDifficulty)
         {
-            MessageBox.Show(nDifficulty.ToString());
+            levelselectform.PrepareLevels(nDifficulty);
+            SelectLevelMenu();
+        }
+
+        public void StartGame(int nDifficulty, int nLevel)
+        {
+            MessageBox.Show(nDifficulty + " " + nLevel);
+            // Level -1 cause list index starts from 0 not 1
+            gameform.PrepareLevel(loader._lstLevelInfos[nDifficulty]._lstLevels[nLevel-1]);
+
+            GameMenu();
         }
     }
 }

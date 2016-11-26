@@ -48,7 +48,7 @@
             // 
             this.ExitBtn.BackColor = System.Drawing.Color.Transparent;
             this.ExitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitBtn.Location = new System.Drawing.Point(190, 323);
+            this.ExitBtn.Location = new System.Drawing.Point(190, 275);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(300, 80);
             this.ExitBtn.TabIndex = 1;
