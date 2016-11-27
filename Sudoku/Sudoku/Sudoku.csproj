@@ -88,6 +88,9 @@
     <Compile Include="SudokuBtn.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="DialogForm.resx">
+      <DependentUpon>DialogForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GameForm.resx">
       <DependentUpon>GameForm.cs</DependentUpon>
     </EmbeddedResource>

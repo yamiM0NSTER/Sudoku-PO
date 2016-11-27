@@ -17,7 +17,6 @@ namespace Sudoku
         private int nDifficulty;
         private SudokuBtn[][] buttons;
         private Stopwatch time;
-        private DialogForm dialog;
 
         public GameForm()
         {
@@ -98,6 +97,20 @@ namespace Sudoku
                         return false;
                 }
             }
+            return true;
+        }
+
+        internal bool CheckCorrectRelative()
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    
+   
+                }
+            }
+
             return true;
         }
 
@@ -185,33 +198,24 @@ namespace Sudoku
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Plexiglass overlay = new Plexiglass(this);
-            dialog = new DialogForm(this);
-
-            this.LocationChanged += Cover_LocationChanged;
-
-            /*Panel pane = new Panel();
-            pane.Parent = overlay;
-            pane.BackColor = System.Drawing.Color.Gainsboro;
-            pane.Location = new System.Drawing.Point(150, 300);
-
-            pane.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            pane.Size = new System.Drawing.Size(200, 400);
-            pane.TabIndex = 0;
-            pane.Show();*/
+            _mainForm.ShowDialogForm(this, null);
         }
 
-        private void Cover_LocationChanged(object sender, EventArgs e)
+        private void GameFinishedEvent(object sender, EventArgs e)
         {
-            // Ensure the plexiglass follows the owner
-            dialog.Location = this.PointToScreen(Point.Empty);
+            _mainForm.SelectLevelMenu();
         }
-        
 
-        private void GameForm_Move(object sender, EventArgs e)
+        internal void Finished()
         {
+            time.Stop();
+            _mainForm.ShowDialogForm(this, "Congratulations!", "Sudoku is filled correctly!\nYour time: " + GetTime(), GameFinishedEvent);
+            //throw new NotImplementedException();
+        }
 
+        internal void Wrong()
+        {
+            _mainForm.ShowDialogForm(this, "OOPS!", "Some fields are filled incorrectly! :/");
         }
     }
 }

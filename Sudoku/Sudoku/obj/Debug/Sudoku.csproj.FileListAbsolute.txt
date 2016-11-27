@@ -21,3 +21,4 @@ C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.MainMenuFo
 C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.LevelDifficultyForm.resources
 C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.SelectLevelForm.resources
 C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.GameForm.resources
+C:\Users\Yami\Desktop\Sudoku\Sudoku-PO\Sudoku\Sudoku\obj\Debug\Sudoku.DialogForm.resources

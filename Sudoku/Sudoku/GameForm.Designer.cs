@@ -103,7 +103,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.ChildForm_Load);
-            this.Move += new System.EventHandler(this.GameForm_Move);
             this.ResumeLayout(false);
             this.PerformLayout();
 

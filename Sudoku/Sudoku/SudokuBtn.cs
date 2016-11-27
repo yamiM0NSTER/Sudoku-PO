@@ -47,13 +47,9 @@ namespace Sudoku
                 if (parent.CheckFinished() == true)
                 {
                     if (parent.CheckCorrect())
-                    {
-                        MessageBox.Show("Horizontal & Vertical correct\nYour time: " +parent.GetTime());
-                    }
+                        parent.Finished();
                     else
-                    {
-                        MessageBox.Show("Some fields are wrong");
-                    }
+                        parent.Wrong();
                 }
             }
         }
