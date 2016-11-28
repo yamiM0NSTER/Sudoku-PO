@@ -12,11 +12,13 @@ namespace Sudoku
     {
         private List<LevelInfo> _lstLevelInfos;
         private int _LevelInfos;
+        private MainWindowForm mainWindowForm;
 
-        public LevelLoader()
+        public LevelLoader(MainWindowForm mainForm)
         {
             _lstLevelInfos = new List<LevelInfo>();
             _LevelInfos = 0;
+            mainWindowForm = mainForm;
         }
 
         public void LoadLevelInfo()
@@ -65,7 +67,10 @@ namespace Sudoku
             }
             else
             {
-                MessageBox.Show("Kappa", "0");
+                mainWindowForm.DialogAddLink("Click", "http://github.com/yamiM0NSTER/Sudoku-PO");
+                mainWindowForm.ShowDialogForm(mainWindowForm, "OOPS!", "Levels Folder is missing.\n Click the link below to see how to fix that.");
+                
+                //MessageBox.Show("Kappa", "0");
             }
 
         }

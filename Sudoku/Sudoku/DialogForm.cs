@@ -10,6 +10,7 @@ namespace Sudoku
         private Button button1;
         private Label label1;
         private Label label2;
+        private LinkLabel linkLabel1;
         private Form _tocover;
 
         public DialogForm(MainWindowForm parent)
@@ -25,7 +26,9 @@ namespace Sudoku
             //overlay = new Plexiglass(tocover);
             //overlay.MdiParent = this.MdiParent;
 
-            _tocover.MdiParent.LocationChanged += Cover_LocationChanged;
+            //_tocover.MdiParent.LocationChanged += Cover_LocationChanged;
+            if (linkLabel1.Text == "")
+                linkLabel1.Visible = false;
         }
         private void Cover_LocationChanged(object sender, EventArgs e)
         {
@@ -43,6 +46,7 @@ namespace Sudoku
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // button1
@@ -68,12 +72,23 @@ namespace Sudoku
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(19, 56);
+            this.label2.Location = new System.Drawing.Point(14, 56);
             this.label2.Margin = new System.Windows.Forms.Padding(10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(362, 138);
+            this.label2.Size = new System.Drawing.Size(362, 110);
             this.label2.TabIndex = 2;
             this.label2.Text = "SmallText";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Location = new System.Drawing.Point(17, 176);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(364, 18);
+            this.linkLabel1.TabIndex = 3;
+            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabel1.Visible = false;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // DialogForm
             // 
@@ -81,6 +96,7 @@ namespace Sudoku
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(400, 300);
             this.ControlBox = false;
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -98,6 +114,7 @@ namespace Sudoku
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.linkLabel1.Text = "";
             this.Hide();
         }
 
@@ -114,6 +131,35 @@ namespace Sudoku
         public void AddButtonEvent(EventHandler Event)
         {
             this.button1.Click += Event;
+        }
+
+        internal void HideLink()
+        {
+            this.linkLabel1.Visible = false;
+        }
+
+        internal void AddLink(string text, string url)
+        {
+            this.linkLabel1.Text = text;
+            this.linkLabel1.Links.Add(0, text.Length, url);
+            this.linkLabel1.Visible = true;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Determine which link was clicked within the LinkLabel.
+            //this.linkLabel1.Links[linkLabel1.Links.IndexOf(e.Link)].Visited = true;
+
+            // Display the appropriate link based on the value of the 
+            // LinkData property of the Link object.
+            string target = e.Link.LinkData as string;
+
+            // If the value looks like a URL, navigate to it.
+            // Otherwise, display it in a message box.
+            if (null != target && target.StartsWith("http://"))
+            {
+                System.Diagnostics.Process.Start(target);
+            }
         }
     }
 }

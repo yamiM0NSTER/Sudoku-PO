@@ -23,7 +23,7 @@ namespace Sudoku
         {
             InitializeComponent();
 
-            loader = new LevelLoader();
+            loader = new LevelLoader(this);
             mainmenuform = new MainMenuForm();
             leveldifficultyform = new LevelDifficultyForm();
             levelselectform = new SelectLevelForm(this);
@@ -62,10 +62,12 @@ namespace Sudoku
         public void SelectLevelMenu()
         {
             levelselectform.Show();
+            
 
             leveldifficultyform.Hide();
             mainmenuform.Hide();
             gameform.Hide();
+            gameform.SendToBack();
         }
 
         public void GameMenu()
@@ -87,6 +89,11 @@ namespace Sudoku
                 dialog.AddButtonEvent(handle);
             dialog.SetToCover(tocover);
             dialog.ShowDialog();
+        }
+
+        public void DialogAddLink(string text, string url)
+        {
+            dialog.AddLink(text, url);
         }
 
         public void LevelSelect(int nDifficulty)
