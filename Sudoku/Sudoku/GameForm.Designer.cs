@@ -34,6 +34,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // BackBtn
@@ -75,13 +76,22 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(104, 486);
+            this.button1.Location = new System.Drawing.Point(155, 391);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(168, 75);
             this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
+            this.button1.Text = "CHECK";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Enabled = false;
+            this.panel1.Location = new System.Drawing.Point(155, 15);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(351, 351);
+            this.panel1.TabIndex = 7;
             // 
             // GameForm
             // 
@@ -94,6 +104,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BackBtn);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -115,5 +126,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

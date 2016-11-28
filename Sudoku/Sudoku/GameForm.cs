@@ -62,7 +62,10 @@ namespace Sudoku
                         buttons[i][j].Dispose();
                     SudokuBtn btn = new SudokuBtn();
                     btn.Parent = this;
-                    btn.BackColor = System.Drawing.Color.Transparent;
+                    btn.BackColor = System.Drawing.Color.DarkGray;
+                    btn.UseVisualStyleBackColor = false;
+                    btn.FlatStyle = FlatStyle.Standard;
+                    //btn.FlatAppearance.BorderColor = Color.Transparent;
                     btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     btn.Location = new System.Drawing.Point(x, y);
                     btn.Size = new System.Drawing.Size(35, 35);
@@ -85,6 +88,7 @@ namespace Sudoku
             time.Reset();
             time.Start();
             timer1.Start();
+            panel1.SendToBack();
         }
 
         internal bool CheckFinished()
@@ -102,12 +106,22 @@ namespace Sudoku
 
         internal bool CheckCorrectRelative()
         {
+            String str;
             for (int i = 0; i < 9; i++)
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    
-   
+                    int nVal = buttons[i][j].GetVal();
+                    if (nVal == 0)
+                        nVal = -1;
+                    for (int k = 0; k < 9; k++)
+                    {
+                        if ((buttons[i][k].GetVal()==nVal && k!=j) ||
+                            (buttons[k][j].GetVal()==nVal && k!=i))
+                        {
+                            return false;
+                        }
+                    }
                 }
             }
 
@@ -198,7 +212,10 @@ namespace Sudoku
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _mainForm.ShowDialogForm(this, null);
+            if(CheckCorrectRelative())
+                _mainForm.ShowDialogForm(this, "Cool!", "Everything looks fine so far.");
+            else
+                _mainForm.ShowDialogForm(this, "OOPS!", "Something is wrong here.");
         }
 
         private void GameFinishedEvent(object sender, EventArgs e)
