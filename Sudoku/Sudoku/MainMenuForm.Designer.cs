@@ -30,6 +30,8 @@
         {
             this.NewGameBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // NewGameBtn
@@ -56,6 +58,15 @@
             this.ExitBtn.UseVisualStyleBackColor = false;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Sudoku.Properties.Resources.Sudoku;
+            this.pictureBox1.Location = new System.Drawing.Point(190, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(300, 100);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -63,6 +74,7 @@
             this.BackColor = System.Drawing.Color.Turquoise;
             this.ClientSize = new System.Drawing.Size(680, 557);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.NewGameBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -74,6 +86,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -82,5 +95,6 @@
 
         private System.Windows.Forms.Button NewGameBtn;
         private System.Windows.Forms.Button ExitBtn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
