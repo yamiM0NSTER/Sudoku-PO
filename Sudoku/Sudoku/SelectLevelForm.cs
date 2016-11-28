@@ -15,6 +15,7 @@ namespace Sudoku
         private MainWindowForm _mainForm;
         private int nDifficulty;
         private List<Button> buttons; 
+
         public SelectLevelForm()
         {
             InitializeComponent();
@@ -33,45 +34,6 @@ namespace Sudoku
         {
 
             _mainForm = MdiParent as MainWindowForm;
-
-            //int y = 175;
-            //foreach (LevelInfo lvlInfo in _mainForm.loader._lstLevelInfos)
-            //{
-            //    Button btn = new Button();
-            //    btn.Text = lvlInfo.name;
-            //    btn.Size = new Size(300,80);
-            //    btn.Location = new Point(190, y);
-            //    btn.Parent = this;
-
-            //    btn.BackColor = System.Drawing.Color.Transparent;
-            //    btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //    btn.Location = new System.Drawing.Point(190, y);
-            //    btn.Size = new System.Drawing.Size(300, 80);
-            //    btn.TabIndex = 0;
-            //    btn.UseVisualStyleBackColor = false;
-            //    btn.Name = lvlInfo.LevelNumber.ToString();
-            //    btn.Click += new System.EventHandler(this.NewGameBtn_Click);
-
-            //    btn.Show();
-            //    y += 130;
-            //}
-
-        }
-
-        private void ChildForm_Click(object sender, EventArgs e)
-        {
-            //this.Hide();
-        }
-
-        private void NewGameBtn_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            _mainForm.LevelSelect(int.Parse(btn.Name));
-        }
-
-        private void ExitBtn_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
@@ -88,15 +50,15 @@ namespace Sudoku
             
             this.nDifficulty = nDifficulty;
             LevelInfo lvlInfo = null;
-            foreach (LevelInfo info in _mainForm.loader._lstLevelInfos)
+            foreach (LevelInfo info in _mainForm.Getloader().GetLevelInfos())
             {
-                if (info.LevelNumber == nDifficulty)
+                if (info.GetLevelNumber() == nDifficulty)
                     lvlInfo = info;
             }
 
             int y = 175;
             int x = 150;
-            for(int i=0;i<lvlInfo._lstLevels.Count;i++)
+            for(int i=0;i<lvlInfo.GetLevels().Count;i++)
             {
                 Button btn = new Button();
                 btn.Text = (i+1).ToString();

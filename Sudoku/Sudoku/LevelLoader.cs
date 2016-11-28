@@ -10,8 +10,9 @@ namespace Sudoku
 {
     public class LevelLoader
     {
-        public List<LevelInfo> _lstLevelInfos;
+        private List<LevelInfo> _lstLevelInfos;
         private int _LevelInfos;
+
         public LevelLoader()
         {
             _lstLevelInfos = new List<LevelInfo>();
@@ -30,7 +31,7 @@ namespace Sudoku
                     Klappa += DirPath + "\n";
 
                     LevelInfo lvlInfo = new LevelInfo();
-                    lvlInfo.LevelNumber = _LevelInfos;
+                    lvlInfo.SetLevelNumber(_LevelInfos);
                     _LevelInfos++;
                     if (File.Exists(DirPath + "\\info.txt"))
                     {
@@ -67,6 +68,11 @@ namespace Sudoku
                 MessageBox.Show("Kappa", "0");
             }
 
+        }
+
+        public List<LevelInfo> GetLevelInfos()
+        {
+            return this._lstLevelInfos;
         }
     }
 }

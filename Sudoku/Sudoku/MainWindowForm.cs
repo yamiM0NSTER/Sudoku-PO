@@ -17,7 +17,7 @@ namespace Sudoku
         private SelectLevelForm levelselectform;
         private GameForm gameform;
         private DialogForm dialog;
-        public LevelLoader loader;
+        private LevelLoader loader;
 
         public MainWindowForm()
         {
@@ -84,7 +84,7 @@ namespace Sudoku
             if (Text2 != null)
                 dialog.SetText2(Text2);
             if (handle != null)
-                dialog.button1.Click += handle;
+                dialog.AddButtonEvent(handle);
             dialog.SetToCover(tocover);
             dialog.ShowDialog();
         }
@@ -97,11 +97,14 @@ namespace Sudoku
 
         public void StartGame(int nDifficulty, int nLevel)
         {
-            //MessageBox.Show(nDifficulty + " " + nLevel);
-            // Level -1 cause list index starts from 0 not 1
-            gameform.PrepareLevel(loader._lstLevelInfos[nDifficulty]._lstLevels[nLevel-1]);
+            gameform.PrepareLevel(loader.GetLevelInfos()[nDifficulty].GetLevels()[nLevel-1]);
 
             GameMenu();
+        }
+
+        public LevelLoader Getloader()
+        {
+            return this.loader;
         }
     }
 }

@@ -74,8 +74,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.ChildForm_Load);
-            this.Click += new System.EventHandler(this.ChildForm_Click);
             this.ResumeLayout(false);
 
         }

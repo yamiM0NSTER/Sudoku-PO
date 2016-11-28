@@ -50,8 +50,11 @@ namespace Sudoku
 
         public void PrepareLevel(Level lvl)
         {
-            int y = 20;
-            int x = 160;
+            //int y = 20;
+            //int x = 160;
+
+            int y = 5;
+            int x = 5;
 
             for (int i = 0; i < 9; i++)
             {
@@ -60,9 +63,9 @@ namespace Sudoku
                     // Remove all buttons for previous level choice
                     if(buttons[i][j] != null)
                         buttons[i][j].Dispose();
-                    SudokuBtn btn = new SudokuBtn();
+                    SudokuBtn btn = new SudokuBtn(this);
                     btn.Parent = this;
-                    btn.BackColor = System.Drawing.Color.DarkGray;
+                    btn.BackColor = System.Drawing.Color.Transparent;
                     btn.UseVisualStyleBackColor = false;
                     btn.FlatStyle = FlatStyle.Standard;
                     //btn.FlatAppearance.BorderColor = Color.Transparent;
@@ -73,14 +76,16 @@ namespace Sudoku
                     btn.UseVisualStyleBackColor = false;
                     btn.SetValue(lvl.board[i][j], true);
 
-                    btn.Show();
+                    panel1.Controls.Add(btn);
+                    //btn.Show();
                     buttons[i][j] = btn;
 
                     if ((j + 1)%3 == 0)
                         x += 5;
                     x += 37;
                 }
-                x = 160;
+                //x = 160;
+                x = 5;
                 if ((i + 1) % 3 == 0)
                     y += 5;
                 y += 37;
@@ -106,7 +111,6 @@ namespace Sudoku
 
         internal bool CheckCorrectRelative()
         {
-            String str;
             for (int i = 0; i < 9; i++)
             {
                 for (int j = 0; j < 9; j++)
@@ -120,6 +124,15 @@ namespace Sudoku
                             (buttons[k][j].GetVal()==nVal && k!=i))
                         {
                             return false;
+                        }
+                    }
+
+                    for (int k = (i/3)*3; k < (i/3)*3 + 3; k++)
+                    {
+                        for (int m = (j/3)*3; m < (j/3)*3 + 3; m++)
+                        {
+                            if (buttons[k][m].GetVal() == nVal && k != i && m != j)
+                                return false;
                         }
                     }
                 }
@@ -227,12 +240,25 @@ namespace Sudoku
         {
             time.Stop();
             _mainForm.ShowDialogForm(this, "Congratulations!", "Sudoku is filled correctly!\nYour time: " + GetTime(), GameFinishedEvent);
-            //throw new NotImplementedException();
         }
 
         internal void Wrong()
         {
             _mainForm.ShowDialogForm(this, "OOPS!", "Some fields are filled incorrectly! :/");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    buttons[i][j].ResetVal();
+                }
+            }
+            time.Reset();
+            time.Start();
+            timer1.Start();
         }
     }
 }

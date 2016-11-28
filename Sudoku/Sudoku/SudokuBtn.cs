@@ -10,6 +10,7 @@ namespace Sudoku
 {
     class SudokuBtn : Button
     {
+        private GameForm parent;
         private int nBaseValue;
         private int nValue;
         private bool bBaseValue;
@@ -23,6 +24,16 @@ namespace Sudoku
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Sudoku_UpdateValue);
         }
 
+        public SudokuBtn(GameForm p)
+        {
+            nBaseValue = 0;
+            nValue = 0;
+            bBaseValue = false;
+            //base.Button();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Sudoku_UpdateValue);
+            parent = p;
+        }
+
         public void SetValue(int nVal, bool bBase)
         {
             nValue = nVal;
@@ -33,6 +44,12 @@ namespace Sudoku
                 {
                     bBaseValue = true;
                     this.BackColor = Color.LightSlateGray;
+                    this.FlatAppearance.BorderColor = Color.LightSlateGray;
+                    this.FlatAppearance.BorderSize = 0;
+                    this.Size = new Size(this.Size.Height - 2, this.Size.Width - 2);
+                    this.Location = new Point(this.Location.X+1, this.Location.Y+1);
+                    this.UseVisualStyleBackColor = false;
+                    this.FlatStyle = FlatStyle.Flat;
                 }
             }
 
@@ -43,7 +60,6 @@ namespace Sudoku
 
             if (bBase == false)
             {
-                GameForm parent = Parent as GameForm;
                 if (parent.CheckFinished() == true)
                 {
                     if (parent.CheckCorrect())
@@ -77,6 +93,11 @@ namespace Sudoku
 
             if(num != -1)
                 SetValue(num, false);
+        }
+
+        public void ResetVal()
+        {
+            SetValue(nBaseValue, false);
         }
     }
 }

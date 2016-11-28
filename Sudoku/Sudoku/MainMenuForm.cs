@@ -23,16 +23,6 @@ namespace Sudoku
             InitializeComponent();
         }
 
-        private void ChildForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ChildForm_Click(object sender, EventArgs e)
-        {
-            //this.Hide();
-        }
-
         private void NewGameBtn_Click(object sender, EventArgs e)
         {
             MainWindowForm form = MdiParent as MainWindowForm;

@@ -7,8 +7,7 @@ namespace Sudoku
 {
     class DialogForm : Form
     {
-        private Plexiglass overlay;
-        public Button button1;
+        private Button button1;
         private Label label1;
         private Label label2;
         private Form _tocover;
@@ -110,6 +109,11 @@ namespace Sudoku
         internal void SetText2(string Text2)
         {
             this.label2.Text = Text2;
+        }
+
+        public void AddButtonEvent(EventHandler Event)
+        {
+            this.button1.Click += Event;
         }
     }
 }

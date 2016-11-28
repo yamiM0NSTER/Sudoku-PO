@@ -11,9 +11,9 @@ namespace Sudoku
 {
     public class LevelInfo
     {
-        public List<Level> _lstLevels;
-        public string name;
-        public int LevelNumber;
+        private List<Level> _lstLevels;
+        private string name;
+        private int LevelNumber;
 
         public LevelInfo()
         {
@@ -23,6 +23,21 @@ namespace Sudoku
         public void SetName(string name)
         {
             this.name = name;
+        }
+
+        public string GetName()
+        {
+            return this.name;
+        }
+
+        public void SetLevelNumber(int nNum)
+        {
+            this.LevelNumber = nNum;
+        }
+
+        public int GetLevelNumber()
+        {
+            return this.LevelNumber;
         }
 
         public void LoadLevel(string path)
@@ -52,6 +67,11 @@ namespace Sudoku
             }
 
             _lstLevels.Add(lvl);
+        }
+
+        public List<Level> GetLevels()
+        {
+            return this._lstLevels;
         }
     }
 }
