@@ -50,9 +50,6 @@ namespace Sudoku
 
         public void PrepareLevel(Level lvl)
         {
-            //int y = 20;
-            //int x = 160;
-
             int y = 5;
             int x = 5;
 
@@ -84,7 +81,6 @@ namespace Sudoku
                         x += 5;
                     x += 37;
                 }
-                //x = 160;
                 x = 5;
                 if ((i + 1) % 3 == 0)
                     y += 5;
