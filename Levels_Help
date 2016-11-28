@@ -1,0 +1,12 @@
+In case you are here, you are probably missing Levels folder.
+
+This folder is important, as it contains all level information.
+Structure is pretty basic. In Levels folder you basically add folders starting from 0 and go up. That will be our difficulty modes.
+In each of them there should be info.txt file with name of the mode.
+Now to add a level to the mode you simply make 1.txt (Sudoku board) file and so on.
+
+Each sudoku board file consists of 9lines of 9digits, so it's pretty simple. 0 stands for empty field.
+
+This is how example folder will look like:
+http://i.imgur.com/mVAaypJ.png
+
