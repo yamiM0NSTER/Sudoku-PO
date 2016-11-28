@@ -7,4 +7,5 @@ Authors:
 * Grzegorz Stryjewski
 
 
-git ls-files | xargs wc -l
+(gci -include *.cs,*.xaml -recurse | select-string .).Count
+1477
