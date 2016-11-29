@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Sudoku
 {
+    /// <summary>
+    /// Class Designed to represent game state and actual progress
+    /// </summary>
     public partial class GameForm : Form
     {
         private MainWindowForm _mainForm;

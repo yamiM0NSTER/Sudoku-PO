@@ -8,6 +8,9 @@ using System.Windows.Forms;
 
 namespace Sudoku
 {
+    /// <summary>
+    /// Class Designed for Loading Difficulty modes together with levels
+    /// </summary>
     public class LevelLoader
     {
         private List<LevelInfo> _lstLevelInfos;
@@ -46,7 +49,7 @@ namespace Sudoku
                             Klappa += "\n" + line + "\n";
                         }
 
-                        Klappa += DirPath + "\\info.txt" + "\n";
+                        Klappa += DirPath + "\\info.txt" + "\n"; 
                     }
 
                     string[] strFiles = Directory.GetFiles(DirPath+"\\");
@@ -63,11 +66,11 @@ namespace Sudoku
                 }
                     
 
-                MessageBox.Show(Klappa, "1");
+                //MessageBox.Show(Klappa, "1");
             }
             else
             {
-                mainWindowForm.DialogAddLink("Click", "http://github.com/yamiM0NSTER/Sudoku-PO");
+                mainWindowForm.DialogAddLink("Click", "https://github.com/yamiM0NSTER/Sudoku-PO/blob/master/Levels_Help");
                 mainWindowForm.ShowDialogForm(mainWindowForm, "OOPS!", "Levels Folder is missing.\n Click the link below to see how to fix that.");
                 
                 //MessageBox.Show("Kappa", "0");

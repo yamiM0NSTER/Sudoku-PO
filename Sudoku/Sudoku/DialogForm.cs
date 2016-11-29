@@ -5,6 +5,9 @@ using System.Runtime.InteropServices;
 
 namespace Sudoku
 {
+    /// <summary>
+    /// Class Designed to show user messages in nice way(instead of MessageBox)
+    /// </summary>
     class DialogForm : Form
     {
         private Button button1;
@@ -156,7 +159,7 @@ namespace Sudoku
 
             // If the value looks like a URL, navigate to it.
             // Otherwise, display it in a message box.
-            if (null != target && target.StartsWith("http://"))
+            if (null != target && target.StartsWith("http"))
             {
                 System.Diagnostics.Process.Start(target);
             }

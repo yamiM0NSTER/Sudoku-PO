@@ -8,6 +8,9 @@ using System.Windows.Forms;
 
 namespace Sudoku
 {
+    /// <summary>
+    /// Class Designed to make Sudoku operations easier and to hold values entered by user
+    /// </summary>
     class SudokuBtn : Button
     {
         private GameForm parent;

@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace Sudoku
 {
+    /// <summary>
+    /// Class Designed to store difficulty mode together with levels
+    /// </summary>
     public class LevelInfo
     {
         private List<Level> _lstLevels;

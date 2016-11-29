@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Sudoku
 {
+    /// <summary>
+    /// Class Designed to hold all interface windows in itself and manage them
+    /// </summary>
     public partial class MainWindowForm : Form
     {
         private MainMenuForm mainmenuform;

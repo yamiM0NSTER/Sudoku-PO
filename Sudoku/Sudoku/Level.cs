@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Sudoku
 {
+    /// <summary>
+    /// Class Designed to store sudoku board loaded from file/memory
+    /// </summary>
     public class Level
     {
         public int[][] board;

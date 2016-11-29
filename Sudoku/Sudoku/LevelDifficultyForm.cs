@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Sudoku
 {
+    /// <summary>
+    /// Class Designed to let user select difficulty of levels he/she wants to play
+    /// </summary>
     public partial class LevelDifficultyForm : Form
     {
         private MainWindowForm _mainForm;
